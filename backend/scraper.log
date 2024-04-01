@@ -1,0 +1,99 @@
+28-Mar-24 15:24:38 - Starting scraper...
+28-Mar-24 15:24:39 - Error scraping page https://www.wku.edu: 'NoneType' object has no attribute 'text'
+28-Mar-24 15:24:39 - Failed to scrape page: https://www.wku.edu
+28-Mar-24 15:24:39 - Error scraping page https://www.wku.edu/about/: 'NoneType' object has no attribute 'text'
+28-Mar-24 15:24:39 - Failed to scrape page: https://www.wku.edu/about/
+28-Mar-24 15:24:39 - Error scraping page https://www.wku.edu/academics/https://www.wku.edu/undergraduate/course-descriptions/https://www.wku.edu/registrar/academic_calendars/: 'NoneType' object has no attribute 'text'
+28-Mar-24 15:24:39 - Failed to scrape page: https://www.wku.edu/academics/https://www.wku.edu/undergraduate/course-descriptions/https://www.wku.edu/registrar/academic_calendars/
+28-Mar-24 15:24:39 - Scraping complete. Waiting for the next run.
+30-Mar-24 23:53:35 - Starting scraper...
+30-Mar-24 23:53:36 - Error scraping page https://www.wku.edu: 'NoneType' object has no attribute 'text'
+30-Mar-24 23:53:36 - Failed to scrape page: https://www.wku.edu
+30-Mar-24 23:53:37 - Error scraping page https://www.wku.edu/about/: 'NoneType' object has no attribute 'text'
+30-Mar-24 23:53:37 - Failed to scrape page: https://www.wku.edu/about/
+30-Mar-24 23:53:38 - Error scraping page https://www.wku.edu/academics/https://www.wku.edu/undergraduate/course-descriptions/https://www.wku.edu/registrar/academic_calendars/: 'NoneType' object has no attribute 'text'
+30-Mar-24 23:53:38 - Failed to scrape page: https://www.wku.edu/academics/https://www.wku.edu/undergraduate/course-descriptions/https://www.wku.edu/registrar/academic_calendars/
+30-Mar-24 23:53:38 - Scraping complete. Waiting for the next run.
+31-Mar-24 00:17:04 - Starting scraper...
+31-Mar-24 00:17:08 - Scraped page: https://www.wku.edu
+31-Mar-24 00:17:08 - Scraped page: https://www.wku.edu/about/
+31-Mar-24 00:17:09 - Scraped page: https://www.wku.edu/academics/
+31-Mar-24 00:17:10 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/
+31-Mar-24 00:17:10 - Scraped page: https://www.wku.edu/registrar/academic_calendars/
+31-Mar-24 00:17:10 - Scraping complete. Waiting for the next run.
+31-Mar-24 01:30:16 - Starting scraper...
+31-Mar-24 01:30:17 - Scraped page: https://www.wku.edu with title: WKU - Western Kentucky University
+31-Mar-24 01:30:17 - Content snippet: No main content found
+31-Mar-24 01:30:17 - Scraped page: https://www.wku.edu
+31-Mar-24 01:30:17 - Scraped page: https://www.wku.edu/about/ with title: About WKU | Western Kentucky University
+31-Mar-24 01:30:17 - Content snippet: No main content found
+31-Mar-24 01:30:17 - Scraped page: https://www.wku.edu/about/
+31-Mar-24 01:30:18 - Scraped page: https://www.wku.edu/academics/ with title: Academics | Western Kentucky University
+31-Mar-24 01:30:18 - Content snippet: No main content found
+31-Mar-24 01:30:18 - Scraped page: https://www.wku.edu/academics/
+31-Mar-24 01:30:19 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/ with title: Page Not Found - 404
+31-Mar-24 01:30:19 - Content snippet: No main content found
+31-Mar-24 01:30:19 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/
+31-Mar-24 01:30:19 - Scraped page: https://www.wku.edu/registrar/academic_calendars/ with title: Academic Calendar | Western Kentucky University
+31-Mar-24 01:30:19 - Content snippet: No main content found
+31-Mar-24 01:30:19 - Scraped page: https://www.wku.edu/registrar/academic_calendars/
+31-Mar-24 01:30:19 - Scraping complete. Waiting for the next run.
+31-Mar-24 01:40:06 - Starting scraper...
+31-Mar-24 01:40:07 - Scraped page: https://www.wku.edu with title: WKU - Western Kentucky University
+31-Mar-24 01:40:07 - Content snippet: No main content found
+31-Mar-24 01:40:07 - Scraped page: https://www.wku.edu
+31-Mar-24 01:40:08 - Scraped page: https://www.wku.edu/about/ with title: About WKU | Western Kentucky University
+31-Mar-24 01:40:08 - Content snippet: No main content found
+31-Mar-24 01:40:08 - Scraped page: https://www.wku.edu/about/
+31-Mar-24 01:40:08 - Scraped page: https://www.wku.edu/academics/ with title: Academics | Western Kentucky University
+31-Mar-24 01:40:08 - Content snippet: No main content found
+31-Mar-24 01:40:08 - Scraped page: https://www.wku.edu/academics/
+31-Mar-24 01:40:09 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/ with title: Page Not Found - 404
+31-Mar-24 01:40:09 - Content snippet: No main content found
+31-Mar-24 01:40:09 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/
+31-Mar-24 01:40:09 - Scraped page: https://www.wku.edu/registrar/academic_calendars/ with title: Academic Calendar | Western Kentucky University
+31-Mar-24 01:40:09 - Content snippet: No main content found
+31-Mar-24 01:40:09 - Scraped page: https://www.wku.edu/registrar/academic_calendars/
+31-Mar-24 01:40:09 - Scraping complete. Waiting for the next run.
+31-Mar-24 01:42:06 - Starting scraper...
+31-Mar-24 01:42:07 - Scraped page: https://www.wku.edu with title: WKU - Western Kentucky University
+31-Mar-24 01:42:07 - Content snippet: No main content found
+31-Mar-24 01:42:07 - Scraped page: https://www.wku.edu
+31-Mar-24 01:42:07 - Scraped page: https://www.wku.edu/about/ with title: About WKU | Western Kentucky University
+31-Mar-24 01:42:07 - Content snippet: No main content found
+31-Mar-24 01:42:07 - Scraped page: https://www.wku.edu/about/
+31-Mar-24 01:42:08 - Scraped page: https://www.wku.edu/academics/ with title: Academics | Western Kentucky University
+31-Mar-24 01:42:08 - Content snippet: No main content found
+31-Mar-24 01:42:08 - Scraped page: https://www.wku.edu/academics/
+31-Mar-24 01:42:09 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/ with title: Page Not Found - 404
+31-Mar-24 01:42:09 - Content snippet: No main content found
+31-Mar-24 01:42:09 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/
+31-Mar-24 01:42:09 - Scraped page: https://www.wku.edu/registrar/academic_calendars/ with title: Academic Calendar | Western Kentucky University
+31-Mar-24 01:42:09 - Content snippet: No main content found
+31-Mar-24 01:42:09 - Scraped page: https://www.wku.edu/registrar/academic_calendars/
+31-Mar-24 01:42:09 - Scraping complete. Waiting for the next run.
+31-Mar-24 01:47:12 - Starting scraper...
+31-Mar-24 01:47:13 - Scraped page: https://www.wku.edu with title: WKU - Western Kentucky University
+31-Mar-24 01:47:13 - Content snippet: Climb With Us
+Exceptional academic programs, applied learning opportunities, and world-renowned facu
+31-Mar-24 01:47:13 - Scraped page: https://www.wku.edu
+31-Mar-24 01:47:14 - Scraped page: https://www.wku.edu/about/ with title: About WKU | Western Kentucky University
+31-Mar-24 01:47:14 - Content snippet: About WKU
+Become a HilltopperVisit Our Campus
+WKU
+About
+About UsAccreditationsNews & EventsTranspare
+31-Mar-24 01:47:14 - Scraped page: https://www.wku.edu/about/
+31-Mar-24 01:47:15 - Scraped page: https://www.wku.edu/academics/ with title: Academics | Western Kentucky University
+31-Mar-24 01:47:15 - Content snippet: No main content found
+31-Mar-24 01:47:15 - Scraped page: https://www.wku.edu/academics/
+31-Mar-24 01:47:15 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/ with title: Page Not Found - 404
+31-Mar-24 01:47:15 - Content snippet: No main content found
+31-Mar-24 01:47:15 - Scraped page: https://www.wku.edu/undergraduate/course-descriptions/
+31-Mar-24 01:47:16 - Scraped page: https://www.wku.edu/registrar/academic_calendars/ with title: Academic Calendar | Western Kentucky University
+31-Mar-24 01:47:16 - Content snippet: WKU
+Registrar
+Academic Calendar
+Current StudentsUndergraduate Academic ProgramsStudent Record Privac
+31-Mar-24 01:47:16 - Scraped page: https://www.wku.edu/registrar/academic_calendars/
+31-Mar-24 01:47:16 - Scraping complete. Waiting for the next run.

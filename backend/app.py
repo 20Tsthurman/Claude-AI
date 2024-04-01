@@ -2,7 +2,6 @@
 It sets up a Flask server and defines the API endpoints for handling chat requests.
 The /api/chat endpoint receives a POST request with the user's message, processes it using the process_message function from chatbot.py, and returns the chatbot's response as JSON."""
 
-
 from flask import Flask, request, jsonify, send_from_directory
 from chatbot import process_message
 import os
@@ -22,6 +21,10 @@ def chat():
     message = request.json['message']
     response = process_message(message)
     return jsonify({'response': response})
+
+@app.route('/styles.css')
+def serve_styles_css():
+    return send_from_directory(app.static_folder, 'styles.css')
 
 if __name__ == '__main__':
     app.run()
