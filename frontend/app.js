@@ -55,3 +55,66 @@ function showLoadingIcon() {
 function hideLoadingIcon() {
     loadingIcon.style.display = 'none';
 }
+
+// Fetch uploaded documents from the server
+function fetchDocuments() {
+    fetch('/api/documents')
+      .then(response => response.json())
+      .then(data => {
+        displayDocuments(data.documents);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+  
+  // Display uploaded documents in the table
+  function displayDocuments(documents) {
+    const documentList = document.getElementById('document-list');
+    documentList.innerHTML = '';
+  
+    documents.forEach(doc => {
+      const listItem = document.createElement('li');
+      listItem.textContent = doc.file_path;
+      documentList.appendChild(listItem);
+    });
+  }
+  
+  // Delete a document
+  function deleteDocument(documentId) {
+    fetch(`/api/documents/${documentId}`, {
+      method: 'DELETE',
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.message);
+        fetchDocuments(); // Refresh the documents list after deletion
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+  
+  // Fetch uploaded documents when the page loads
+  document.addEventListener('DOMContentLoaded', fetchDocuments);
+
+  document.getElementById('upload-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the default form submission
+    const formData = new FormData();
+    const fileInput = document.getElementById('file-input');
+    if (fileInput.files.length > 0) {
+        formData.append('file', fileInput.files[0]);
+        fetch('/api/upload', {
+            method: 'POST',
+            body: formData, // No headers for multipart/form-data, it's automatically set by the browser
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message); // Show success message or handle accordingly
+            fetchDocuments(); // Refresh the documents list to show the newly uploaded document
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+});

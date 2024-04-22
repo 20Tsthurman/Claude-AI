@@ -65,7 +65,37 @@
             </div>
         </div>
     </div>
+    <div class="container mt-4">
+        <h2>Upload Documents</h2>
+        <!-- Added id="upload-form" and enctype="multipart/form-data" here -->
+        <form id="upload-form" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="file-input" class="form-label">Select a file:</label>
+            <!-- Ensure the input field for file selection is correctly configured -->
+            <input type="file" class="form-control" id="file-input" name="file" accept=".pdf,.doc,.docx,.txt">
+          </div>
+          <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+    
 
+      <div class="container mt-4">
+        <h2>Uploaded Documents</h2>
+        <table class="table" id="documents-table">
+          <thead>
+            <tr>
+              <th>File Path</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div>
+        <h2>Uploaded Documents</h2>
+        <ul id="document-list"></ul>
+      </div>
     <script src="app.js"></script>
 </body>
 </html>
