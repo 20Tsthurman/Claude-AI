@@ -1,12 +1,20 @@
 import requests
 from bs4 import BeautifulSoup
-import sqlite3
+import mysql.connector
 import logging
 import time
 
 # Configure logging
 logging.basicConfig(filename='scraper.log', level=logging.INFO,
                     format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+
+def get_db_connection():
+    return mysql.connector.connect(
+        host="localhost",
+        user="root",  # Use your MySQL username
+        password="Tst809024-",  # Your MySQL password
+        database="chatbotdb"  # The name of the MySQL database you created
+    )
 
 def scrape_page(url):
     try:
@@ -46,17 +54,17 @@ def scrape_wku_website():
         # Add more URLs as needed
     ]
 
-    conn = sqlite3.connect("chatbot.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
-    # Create a table to store the scraped data if it doesn't exist
+    # Ensure the scraped_data table exists
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS scraped_data (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            url TEXT,
-            title TEXT,
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            url VARCHAR(255),
+            title VARCHAR(255),
             content TEXT,
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     """)
 
@@ -67,7 +75,7 @@ def scrape_wku_website():
             # Insert the extracted data into the table
             cursor.execute("""
                 INSERT INTO scraped_data (url, title, content)
-                VALUES (?, ?, ?)
+                VALUES (%s, %s, %s)
             """, (url, title, main_content))
             logging.info(f"Scraped page: {url}")
         else:
