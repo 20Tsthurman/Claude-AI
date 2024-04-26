@@ -1,120 +1,54 @@
-const chatMessages = document.getElementById('chat-messages');
-const messageInput = document.getElementById('message-input');
-const sendButton = document.getElementById('send-button');
-const loadingIcon = document.getElementById('loading-icon');
+document.addEventListener('DOMContentLoaded', function() {
+    const messageInput = document.getElementById('message-input');
+    const sendButton = document.getElementById('send-button');
+    const chatMessages = document.getElementById('chat-messages');
+    const loadingIcon = document.getElementById('loading-icon');
 
-sendButton.addEventListener('click', sendMessage);
-messageInput.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-        sendMessage();
-    }
-});
-
-function sendMessage() {
-    const message = messageInput.value.trim();
-    if (message !== '') {
-        appendMessage('user', message);
-        messageInput.value = '';
-        showLoadingIcon();
-
-        fetch('/api/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ message }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            hideLoadingIcon();
-            appendMessage('assistant', data.response);
-        })
-        .catch(error => {
-            hideLoadingIcon();
-            console.error('Error:', error);
-            appendMessage('error', 'Oops! Something went wrong.');
-        });
-    }
-}
-
-function appendMessage(role, content) {
-    const messageElement = document.createElement('div');
-    messageElement.className = `chat-message ${role}`;
-    messageElement.innerHTML = `
-        <p class="message-role">${role === 'user' ? 'You' : 'Assistant'}</p>
-        <p class="message-content">${content}</p>
-    `;
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function showLoadingIcon() {
-    loadingIcon.style.display = 'inline-block';
-}
-
-function hideLoadingIcon() {
-    loadingIcon.style.display = 'none';
-}
-
-// Fetch uploaded documents from the server
-function fetchDocuments() {
-    fetch('/api/documents')
-      .then(response => response.json())
-      .then(data => {
-        displayDocuments(data.documents);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  }
-  
-  // Display uploaded documents in the table
-  function displayDocuments(documents) {
-    const documentList = document.getElementById('document-list');
-    documentList.innerHTML = '';
-  
-    documents.forEach(doc => {
-      const listItem = document.createElement('li');
-      listItem.textContent = doc.file_path;
-      documentList.appendChild(listItem);
+    sendButton.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            sendMessage();
+        }
     });
-  }
-  
-  // Delete a document
-  function deleteDocument(documentId) {
-    fetch(`/api/documents/${documentId}`, {
-      method: 'DELETE',
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.message);
-        fetchDocuments(); // Refresh the documents list after deletion
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  }
-  
-  // Fetch uploaded documents when the page loads
-  document.addEventListener('DOMContentLoaded', fetchDocuments);
 
-  document.getElementById('upload-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the default form submission
-    const formData = new FormData();
-    const fileInput = document.getElementById('file-input');
-    if (fileInput.files.length > 0) {
-        formData.append('file', fileInput.files[0]);
-        fetch('/api/upload', {
-            method: 'POST',
-            body: formData, // No headers for multipart/form-data, it's automatically set by the browser
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.message); // Show success message or handle accordingly
-            fetchDocuments(); // Refresh the documents list to show the newly uploaded document
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+    function sendMessage() {
+        const message = messageInput.value.trim();
+        if (message) {
+            appendMessage('user', message);
+            messageInput.value = '';
+            showLoading();
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                appendMessage('assistant', data.response);
+                hideLoading();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                appendMessage('error', 'Oops! Something went wrong.');
+                hideLoading();
+            });
+        }
+    }
+
+    function appendMessage(role, content) {
+        const messageElement = document.createElement('div');
+        messageElement.className = `message ${role}`;
+        messageElement.textContent = `${role === 'user' ? 'You: ' : 'Assistant: '}${content}`;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function showLoading() {
+        loadingIcon.style.display = 'inline-block';
+    }
+
+    function hideLoading() {
+        loadingIcon.style.display = 'none';
     }
 });
