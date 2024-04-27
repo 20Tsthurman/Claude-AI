@@ -1,0 +1,50 @@
+# WKU Course Aid Chatbot
+
+The WKU Course Aid Chatbot is an AI-powered tool designed to assist Western Kentucky University students with their academic needs. It provides comprehensive information through a user-friendly web interface, including class schedules, course topics, and answers to general academic queries.
+
+## Features
+
+- Answers questions about class schedules, course topics, and academic policies.
+- Processes natural language queries and provides relevant responses.
+- Integrates with a MySQL database to store and retrieve information.
+- Supports uploading and processing of course-related documents (syllabi, lecture notes, etc.).
+- Utilizes the Claude AI language model for intelligent conversation and information retrieval.
+
+## Technologies Used
+
+- Python
+- Flask
+- MySQL
+- Anthropic Claude AI
+- HTML/CSS/JavaScript
+
+## Setup and Installation
+
+1. **Clone the repository:**
+git clone https://github.com/20Tsthurman/Claude-AI
+
+2. **Install the required dependencies:**
+pip install -r requirements.txt
+
+3. **Set up the MySQL database:**
+- Create a new database named `chatbotdb`.
+- Execute the SQL scripts in the `database` folder to create the necessary tables.
+
+4. **Configure the application:**
+- Open `config.py` and update the MySQL database connection details.
+- Set the Claude AI API key in `config.py`.
+
+5. **Run the application:**
+python app.py
+
+6. **Access the chatbot in your web browser at `http://localhost:5000`.**
+
+## Usage
+
+- Type your question or message in the chat input field and press Enter or click the Send button.
+- The chatbot will process your message and provide a response based on its knowledge base and the information available in the database.
+- To upload course-related documents, click on the "Upload" button and select the file to upload.
+
+## Contributing
+
+Contributions to the WKU Course Aid Chatbot project are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.

@@ -12,7 +12,7 @@ def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="Tst809024-",
+        password="Create your own",
         database="chatbotdb"
     )
 

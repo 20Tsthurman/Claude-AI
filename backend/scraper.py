@@ -11,8 +11,8 @@ logging.basicConfig(filename='scraper.log', level=logging.INFO,
 def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
-        user="root",  # Use your MySQL username
-        password="Tst809024-",  # Your MySQL password
+        user="root",  # MySQL username
+        password="insertpass",  # MySQL password
         database="chatbotdb"  # The name of the MySQL database you created
     )
 
